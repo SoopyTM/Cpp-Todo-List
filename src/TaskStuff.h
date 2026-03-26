@@ -15,10 +15,12 @@ class TaskClass {
     std::vector<Task> Tasks;
 
   public:
+    void readTasks();
     void addTask();
     void viewTasks();
     void markTaskComplete();
     void deleteTask();
+    void saveTasks();
 };
 
 #endif

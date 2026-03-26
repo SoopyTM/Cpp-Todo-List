@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdint> // Used for the uint32_t's
+#include <fstream>
 
 #include "TaskStuff.h"
 void TaskClass::addTask() {
@@ -53,4 +54,32 @@ void TaskClass::deleteTask() {
   Tasks.erase(Tasks.begin() + chosenID - 1);
 
   std::cout << "Removed task " << chosenID << " from list." << std::endl;
+}
+
+void TaskClass::saveTasks() {
+    std::ofstream file("TaskList.txt");
+
+    if (!file) {
+        std::cerr << "Failed to open file\n";
+        return;
+    }
+
+    file << "[\n";
+
+    for (size_t i = 0; i < Tasks.size(); ++i) {
+        const auto& t = Tasks[i];
+
+        file << "  {\n";
+        file << "    \"Name\": \"" << t.Name << "\",\n";
+        file << "    \"Description\": " << t.Description << "\n";
+        file << "    \"Completed\": \"" << t.Completed << "\",\n";
+        file << "  }";
+
+        if (i != Tasks.size() - 1)
+            file << ",";
+
+        file << "\n";
+    }
+
+    file << "]\n";
 }

@@ -31,6 +31,8 @@ int main(){
     }
         
   } while (choice != 5);
+  
+  TaskObj.saveTasks();
 
   return 0;
 }
