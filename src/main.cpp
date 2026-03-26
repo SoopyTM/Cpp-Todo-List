@@ -8,7 +8,7 @@ int main(){
     
   do {
     std::cout << "Please listen carefully for our menu options have changed:" << std::endl;
-    std::cout << "1:Add New Task\n2:View Tasks\n3.Mark Complete\n4.Exit\n> ";
+    std::cout << "1:Add New Task\n2:View Tasks\n3.Mark Complete\n4.Delete Task\n5.Exit\n> ";
     std::cin >> choice;
         
     switch (choice) {
@@ -24,11 +24,13 @@ int main(){
         TaskObj.markTaskComplete();
         break;
       
+      case 4:
+        TaskObj.deleteTask();
       default:
         break;
     }
         
-  } while (choice != 4);
+  } while (choice != 5);
 
   return 0;
 }

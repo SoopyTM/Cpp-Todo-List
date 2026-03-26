@@ -18,6 +18,7 @@ class TaskClass {
     void addTask();
     void viewTasks();
     void markTaskComplete();
+    void deleteTask();
 };
 
 #endif
