@@ -1,4 +1,5 @@
 #include "TaskStuff.h"
+#include <cstdint>
 #include <iostream>
 
 void TaskClass::addTask() {
@@ -21,7 +22,7 @@ void TaskClass::addTask() {
 void TaskClass::viewTasks() {
   std::cout << "Todo List:" << std::endl;
 
-  for (int i = 0; i < Tasks.size(); i++) {
+  for (uint32_t i = 0; i < Tasks.size(); i++) {
     std::cout << i + 1 << ": Name: " << Tasks[i].Name
               << ", Description: " << Tasks[i].Description
               << ", Completed: " << (Tasks[i].Completed ? "y\n" : "n\n") << std::endl;
@@ -29,7 +30,7 @@ void TaskClass::viewTasks() {
 }
 
 void TaskClass::markTaskComplete() {
-  int chosenID;
+  uint32_t chosenID;
   std::cout << "Enter The Task ID: ";
   std::cin >> chosenID;
 
