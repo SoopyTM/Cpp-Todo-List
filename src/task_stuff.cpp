@@ -64,7 +64,6 @@ void TaskClass::ViewTasks() {
   }
 }
 
-// Sets the chosen task's complete variable to true.
 void TaskClass::MarkTaskComplete() {
   uint32_t chosen_id;
   std::cout << "Enter The Task ID: ";
@@ -80,7 +79,6 @@ void TaskClass::MarkTaskComplete() {
   std::cout << "Set Task " << chosen_id << " To Complete.\n" << std::endl;
 }
 
-// Deletes the chosen task.
 void TaskClass::DeleteTask() {
   uint32_t chosen_id;
   std::cout << "Enter the task ID you want to delete: ";
@@ -94,7 +92,6 @@ void TaskClass::DeleteTask() {
   std::cout << "Removed task " << chosen_id << " from list." << std::endl;
 }
 
-// Writes the tasks_ vector to a csv (Comma Seperated Values) file.
 void TaskClass::SaveTasks() {
   std::ofstream out_file("task-list.csv");
   
