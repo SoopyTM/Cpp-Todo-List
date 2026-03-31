@@ -6,7 +6,7 @@
 
 class TaskClass {
   private:
-    // Each task will follow include these patameters. name: The name of the task; description: An optional description for the task. This can include extra info or anything the user would like; completed: This just marks if the task is completed or not. false means it has not yet been completed(default), true means it has been completed.
+    // Each task will include these patameters. name: The name of the task; description: An optional description for the task. This can include extra info or anything the user would like; completed: This just marks if the task is completed or not. false means it has not yet been completed(default), true means it has been completed.
     struct Task {
       std::string name;
       std::string description;
@@ -18,7 +18,7 @@ class TaskClass {
 
   public:
     // Reads the task_list.csv file into the tasks_ vector.
-    void ReadTasks();
+    void ReadTasksFromFile();
 
     // Adds A Task to the tasks_ vector.
     void AddTask();
@@ -36,7 +36,7 @@ class TaskClass {
     void DeleteTask();
 
     // Writes the tasks_ vector to a csv (Comma Seperated Values) file.
-    void SaveTasks();
+    void SaveTasksToFile();
 };
 
 #endif

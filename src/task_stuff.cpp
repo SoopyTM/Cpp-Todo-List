@@ -5,7 +5,7 @@
 
 #include "task_stuff.h"
 
-void TaskClass::ReadTasks(){
+void TaskClass::ReadTasksFromFile(){
   std::ifstream in_file("task_list.csv");
 
   if (!in_file) {
@@ -107,7 +107,7 @@ void TaskClass::DeleteTask() {
   std::cout << "Removed task " << chosen_id << " from list." << std::endl;
 }
 
-void TaskClass::SaveTasks() {
+void TaskClass::SaveTasksToFile() {
   std::ofstream out_file("task_list.csv");
   
   if (!out_file) {
