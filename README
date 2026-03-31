@@ -1,3 +1,5 @@
 Why else would someone want to make a todo app?
 
 I made this so that I can practice C++. I have experience with C. In fact, C is or at least one of my favourite programming languages. I have recently applied for a programming course at college, and apart of that is OOP. I do not know much about OOP. So i thought "Whats a language similar to C, that provides OOP for me to learn?". That's right... C++. That's the point of this. I just wanna learn OOP. 
+
+This does is intended for linux (hense the makefile with g++ (which i think is techincally usable on windows, but it gets annoying)) but it is possible to be compiled and ran on windows. I won't go through how to do it, but i just used Visual Studio 2022.
