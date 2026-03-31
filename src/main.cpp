@@ -17,8 +17,19 @@ int main(){
   std::system(CLEAR_COMMAND);
   do {
     std::cout << "Please listen carefully for our menu options have changed:" << std::endl;
-    std::cout << "1:Add New Task\n2:View Tasks\n3:Mark Task Complete\n4:Mark Task Incomplete\n5:Delete Task\n6:Exit\n> ";
-    std::cin >> choice;
+    std::cout << "1:Add New Task\n2:View Tasks\n3:Mark Task Complete\n4:Mark Task Incomplete\n5:Delete Task\n6:Exit" << std::endl;
+    while(true) {
+      std::cout << "> ";
+
+      if (std::cin >> choice) {
+        break;
+
+      } else {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cout << "Invalid input. Please Enter an integer value." << std::endl;
+      }
+    }
         
     switch (choice) {
       case 1:
