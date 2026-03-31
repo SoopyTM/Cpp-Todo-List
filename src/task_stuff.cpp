@@ -119,4 +119,9 @@ void TaskClass::SaveTasksToFile() {
     out_file << tasks_[i].name << "," << tasks_[i].description << "," << tasks_[i].completed << std::endl;
   }
   out_file.close();
+  if (!out_file) {
+    std::cout << "Failed to close file" << std::endl;
+    return;
+  }
+  std::cout << "Successfully saved tasks to file." << std::endl;
 }
