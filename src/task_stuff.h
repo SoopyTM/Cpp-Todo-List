@@ -29,6 +29,9 @@ class TaskClass {
     // Sets the chosen task's complete variable to true.
     void MarkTaskComplete();
 
+    // Sets the chosen task's complete variable to false.
+    void MarkTaskIncomplete();
+
     // Deletes the chosen task.
     void DeleteTask();
 

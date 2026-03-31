@@ -79,6 +79,21 @@ void TaskClass::MarkTaskComplete() {
   std::cout << "Set Task " << chosen_id << " To Complete.\n" << std::endl;
 }
 
+void TaskClass::MarkTaskIncomplete() {
+  uint32_t chosen_id;
+  std::cout << "Enter The Task ID: ";
+  std::cin >> chosen_id;
+
+  if (chosen_id <= 0 || chosen_id > tasks_.size()) {
+    std::cout << "You entered an incorrect ID.\n" << std::endl;
+    return;
+  }
+
+  tasks_[chosen_id - 1].completed = false;
+
+  std::cout << "Set Task " << chosen_id << " To Incomplete.\n" << std::endl;
+}
+
 void TaskClass::DeleteTask() {
   uint32_t chosen_id;
   std::cout << "Enter the task ID you want to delete: ";
@@ -93,7 +108,7 @@ void TaskClass::DeleteTask() {
 }
 
 void TaskClass::SaveTasks() {
-  std::ofstream out_file("task-list.csv");
+  std::ofstream out_file("task_list.csv");
   
   if (!out_file) {
     std::cerr << "Failed to open file" << std::endl;
